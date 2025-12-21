@@ -1,12 +1,12 @@
 import os
-path = "C:/Users/Admin/Downloads/check"
+path = "../data/raw"
 datas = os.listdir(path);
 
 subject = ['To&#xE1;n', 'V&#x103;n', 'Ngo&#x1EA1;ing&#x1EEF;','L&#xED;','H&#xF3;a','Sinh','S&#x1EED;', '&#x110;&#x1ECB;a',  'GDCD']
 
 title = "Số báo danh,Khối Thi,Toán,Văn,Ngoại Ngữ,Lý,Hoá,Sinh,Sử,Địa lý,GDCD"
 
-with open("data_clean.csv","w",encoding="utf8") as file_title:
+with open("../data/processed/data_clean.csv","w",encoding="utf8") as file_title:
     file_title.write(title + "\n")
 
 for i in range(len(datas)):
@@ -107,7 +107,7 @@ for i in range(len(datas)):
             a += "khxh,"
     
     tmp = sbd + "," + a + s
-    with open("data_clean.csv","a",encoding="utf8") as file_csv:
+    with open("../data/processed/data_clean.csv","a",encoding="utf8") as file_csv:
         file_csv.write(tmp + "\n")
         
     print("SBD : " + str(sbd) + " đã thành công")

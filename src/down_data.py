@@ -14,10 +14,10 @@ for i in range(1000004,1097526):
 ans = ".html"
 def download_html(sobaodanh):
     url = f"{base_url}{sobaodanh}{ans}"
-    curl_command = f'curl -s {url} -o {sobaodanh}.html'
+    curl_command = f'curl -s {url} -o ../data/raw/{sobaodanh}.html'
     try:
         subprocess.run(curl_command, shell=True, check=True)
-        print(f"Đã tải nội dung trang web và lưu vào {sobaodanh}.html")
+        print(f"Đã tải nội dung trang web và lưu vào ../data/raw/{sobaodanh}.html")
     except subprocess.CalledProcessError as e:
         print(f"Lỗi khi tải nội dung trang web cho số báo danh {sobaodanh}: {e}")
 

@@ -2,7 +2,7 @@ import pandas as pd
 # with open("data_new_fix.csv", "r", encoding="utf8") as file:
 subject = ["Toán","Ngữ Văn","Ngoại Ngữ","Vật Lý","Hóa Học","Sinh Học","Lịch Sử","Địa lý","GDCD"]
 
-path = "data_clean.csv"
+path = "../data/processed/data_clean.csv"
 data = pd.read_csv(path)
 
 for i in subject:
@@ -24,7 +24,7 @@ for i in subject:
     for i in range(len(scores)):
         scores_dict[scores[i]] += 1
 
-    with open("phodiemmon" + str(subject_) + ".csv" , "a", encoding="utf8") as file:
+    with open("../data/results/phodiemmon" + str(subject_) + ".csv" , "a", encoding="utf8") as file:
         file.write("Điểm,Tần suất\n")
         for key, value in scores_dict.items():
             file.write(str(key) + "," + str(value) + "\n")
